@@ -31,7 +31,7 @@ function App() {
   const [sounds, setSounds] = useImmer(
     SOURCES.map(({ src, key, display }) => {
       return {
-        sound: `./src/assets/${src}`,
+        sound: `https://s3.amazonaws.com/freecodecamp/drums/${src}`,
         key: key,
         playing: false,
         display: display,
