@@ -1,10 +1,4 @@
-import {
-  Children,
-  JSXElementConstructor,
-  useEffect,
-  useRef,
-  useState,
-} from "react"
+import { useEffect, useRef, useState } from "react"
 import { useImmer } from "use-immer"
 
 const SOURCES = [
@@ -52,14 +46,6 @@ function App() {
   useEffect(() => {
     window.addEventListener("keypress", handleKeydown, {})
     window.addEventListener("keyup", handleKeyUp)
-
-    if (drumMachineRef.current !== null) {
-      const child = drumMachineRef.current.children[0]
-        .children[0] as HTMLAudioElement
-
-      child.play()
-    }
-
     return () => {
       window.removeEventListener("keypress", handleKeydown)
     }
